@@ -5,6 +5,8 @@ function closePopUp() {
     cart.renderCart()
 }
 
+
+//Similar to Null Object Design Pattern 
 function getItemCount(id) {
     const cartItem = cart.items.find((i) => i.id === id)
     return (typeof cartItem !== "undefined") ? cartItem.count : 0;
@@ -48,39 +50,11 @@ const foods = [{
         price: 12.99,
         rating: 3.6,
     },
-    {
-        id: 6,
-        name: 'Stake Beef with special oil',
-        img: 'assets/plate-2.png',
-        price: 12.99,
-        rating: 3.6,
-    },
-    {
-        id: 7,
-        name: 'Stake Beef with special oil',
-        img: 'assets/plate-2.png',
-        price: 12.99,
-        rating: 3.6,
-    },
-    {
-        id: 8,
-        name: 'Stake Beef with special oil',
-        img: 'assets/plate-2.png',
-        price: 12.99,
-        rating: 3.6,
-    },
-    {
-        id: 9,
-        name: 'Stake Beef with special oil',
-        img: 'assets/plate-2.png',
-        price: 12.99,
-        rating: 3.6,
-    },
+   
 ]
 
 const cart = {
     items: [],
-    discount: 0,
     updateItem(id, count, item) {
         const element = getItem(id)
         if (element) {
@@ -96,13 +70,13 @@ const cart = {
             })
             this.items = this.items.filter(item => item.count)
 
-        } else {
-            if (count > 0) {
-                this.items.push({
-                    ...item,
-                    count: 1
-                })
-            }
+        } else if (count > 0) {
+
+            this.items.push({
+                ...item,
+                count: 1
+            })
+
         }
         renderMain()
         this.renderCart()
@@ -115,6 +89,9 @@ const cart = {
         this.renderCart()
         this.renderCheckout()
     },
+
+    discount: 0,
+
     calculatePrice() {
         return this.items.reduce((total, food) => total + (food.count * food.price), 0).toFixed(2)
     },
@@ -132,13 +109,7 @@ const cart = {
         return (parseFloat(foodPrice) + parseFloat(foodTaxes) - foodDiscount).toFixed(2)
     },
     renderCart() {
-        if (this.items.length === 0) {
-            $('.cart').html(`<div class="empty-cart text-center pb-4">
-            <i class="fa fa-shopping-cart shopping-cart"></i>
-            <p class="m-0">Your shopping cart is empty!</p>
-        </div>`)
-
-        } else {
+        if (this.items.length) {
             $('.empty-cart').attr('style', 'display:none;')
 
             const result = this.items.map(item => {
@@ -162,8 +133,14 @@ const cart = {
                 `
             })
             $('.cart').html(result.join(''))
+        } else {
+            $('.cart').html(
+                `<div class="empty-cart text-center pb-4">
+                 <i class="fa fa-shopping-cart shopping-cart"></i>
+                 <p class="m-0">Your shopping cart is empty!</p>
+                 </div>`
+            )
         }
-
     },
     renderCheckout() {
         $('.checkout-price').html(this.calculatePrice() + '$')
@@ -175,28 +152,13 @@ const cart = {
         const code = $('.check-code input').val();
         if (code === "hey") {
             this.discount = 0.2
-            document.getElementById('hghg').style.background = "#00c341"
-            // $(".check-code i").mousedown(function () {
-                //     $(this).attr("style", "background: #009030;")
-            // });
-            // $(".check-code i").mouseup(function () {
-                //     $(this).attr("style", "background: #00c341;")
+            document.getElementById('check-discount').style.background = "#00c341"
 
-            // });
-            console.log(this.discount)
             this.renderCheckout()
         } else {
             this.discount = 0
             this.renderCheckout()
-            document.getElementById('hghg').style.background = "#ffa600"
-            // $(".check-code i").mouseup(function () {
-                //     $(this).attr("style", "background: #ffa600;")
-
-            // });
-            // $(".check-code i").mousedown(function () {
-            //     $(this).attr("style", "background: #ff7b00;")
-            // });
-            
+            document.getElementById('check-discount').style.background = "#ffa600"
         }
     }
 }
