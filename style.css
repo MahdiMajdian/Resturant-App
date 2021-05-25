@@ -83,10 +83,9 @@ body {
 .popup {
 	position: absolute;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 5;
 	animation: blurs 0.2s forwards;
 	display: grid;
 	place-items: center;
@@ -401,7 +400,7 @@ body {
 		top: 85vh;
 		right: 0;
 		height: auto;
-		
+
 	}
 	.details-box {
 		width: 75%;
