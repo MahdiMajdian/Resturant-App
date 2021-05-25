@@ -1,0 +1,338 @@
+@font-face {
+	font-family: "Effra";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Effra"), url("assets/Effra_Std_Rg.woff") format("woff");
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Effra;
+	font-weight: bold;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+.header {
+	height: 15rem;
+	width: 100%;
+	background-image: url(assets/haeder.png);
+	position: relative;
+}
+.header-overlay {
+	width: 100%;
+	height: 5rem;
+	background: rgb(255, 255, 255);
+	border-radius: 5rem 5rem 0 0;
+	position: absolute;
+	/* box-shadow: 0px -6px 6px rgba(0, 0, 0, 0.2); */
+	bottom: 0;
+}
+.header-content {
+	width: calc(100% - 20rem);
+	height: 10rem;
+	position: relative;
+}
+.header-img {
+	position: absolute;
+	height: 100%;
+	width: 18rem;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 3rem;
+	background: url(assets/header-img.png) no-repeat;
+	background-position: center;
+	background-size: contain;
+	filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+	z-index: 2;
+}
+.header-p1 {
+	color: #ffffff;
+	font-size: 2.8rem;
+	font-family: Effra;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	right: calc(50% + 9rem);
+	top: 50%;
+	transform: translateY(-50%);
+	user-select: none;
+}
+.header-p2 {
+	color: #ffffff;
+	font-size: 2.8rem;
+	font-family: Effra;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	left: calc(50% + 9rem);
+	top: 50%;
+	transform: translateY(-50%);
+	user-select: none;
+}
+.content {
+	position: absolute;
+	top: 10rem;
+	right: 19rem;
+	left: 0rem;
+	bottom: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.flex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.box {
+	width: 22rem;
+	height: 15rem;
+	border-radius: 1.5rem;
+	margin: 1rem 0;
+	background: linear-gradient(-60deg, #c7afff, #ffc456);
+	position: relative;
+	user-select: none;
+}
+.box > img {
+	width: 10rem;
+	height: 10rem;
+	position: absolute;
+	top: -2rem;
+	right: 0;
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+.rating {
+	font-family: Effra;
+	font-size: 1.4rem;
+	color: white;
+	position: absolute;
+	top: 2.5rem;
+	left: 2rem;
+}
+.rating > i {
+	color: #fff068;
+}
+.box > p {
+	position: absolute;
+	bottom: 1rem;
+	left: 2rem;
+	font-size: 1.8rem;
+	color: white;
+	width: 10.5rem;
+}
+.box > h5 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 1rem 2rem;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #ffffff;
+}
+.box > h5 > span {
+	color: #b3ffb0;
+	font-size: 1.5rem;
+	margin: 0 0.25rem;
+}
+.box > h6 {
+	color: white;
+	position: absolute;
+	font-size: 1rem;
+	font-weight: bold;
+	bottom: 4rem;
+	right: 3rem;
+	margin: 1rem;
+	background-color: #fbd460;
+	width: 2rem;
+	height: 2rem;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+}
+.box-overlay {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	animation: blurs 0.2s forwards;
+	display: grid;
+	place-items: center;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+@keyframes blurs {
+	0% {
+		backdrop-filter: blur(0px);
+	}
+	100% {
+		backdrop-filter: blur(3px);
+	}
+}
+.order {
+	width: 35rem;
+	height: 25rem;
+	/* background-color: white; */
+	/* background-color: #FF9A00; */
+	background: linear-gradient(45deg, #ff7300 -10%, #ffd13a 110%);
+	border-top: 3px solid rgba(255, 255, 255, 0.7);
+	border-right: 3px solid rgba(255, 255, 255, 0.7);
+	border-radius: 2rem;
+	font-size: 2rem;
+	position: relative;
+}
+.order img {
+	width: 14rem;
+	height: 14rem;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.25));
+	user-select: none;
+}
+.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1rem;
+}
+.close > i {
+	background-color: white;
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	color: #ffd13a;
+	display: grid;
+	place-items: center;
+}
+.qt {
+	width: 10rem;
+	height: 4rem;
+	background-color: #fff;
+	color: #ff9a00;
+	user-select: none;
+}
+.qt i {
+	width: 3rem;
+	height: 3rem;
+	margin: auto 0;
+	background-color: #ff9a00;
+	border-radius: 50%;
+	font-size: 75%;
+	display: grid;
+	place-items: center;
+}
+.qt i:active {
+	background-color: #ff7b00;
+}
+.panel {
+	width: 20rem;
+	position: absolute;
+	top: 10rem;
+	height: calc(100vh - 10rem);
+	right: 0;
+	border-radius: 0 0rem 0 0;
+	background-color: rgb(64, 47, 136);
+}
+.cart {
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+
+	max-height: 50%;
+	background: linear-gradient(45deg, #ffa600 -10%, #ffd857 110%);
+	color: #402f88;
+}
+.shopping-cart {
+	font-size: 3rem;
+}
+.cart::-webkit-scrollbar {
+	display: none;
+}
+.remove-item{
+	background: #402f88;
+	color: #fff;
+	border-radius: 50%;
+	width: 1.4rem;
+	height: 1.4rem;
+	display: grid !important;
+	place-items: center;
+}
+.cart-count p{
+	font-size: 1.5rem;
+}
+.cart-price{
+	font-size: 1.5rem;
+}
+.check-code {
+	display: grid;
+	place-items: center;
+	position: relative;
+	height: 2.75rem;
+}
+.check-code input {
+	border: none;
+	outline: none;
+	font-size: 1.5rem;
+	color: #2c2c2c;
+}
+.check-code input::placeholder {
+	color: rgb(200, 200, 200);
+	user-select: none;
+}
+.check-code i {
+	user-select: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: grid;
+	height: 2.75rem;
+	width: 2.75rem;
+	background: #ffa600;
+	color: white;
+	font-size: 1.5rem;
+	border-top-right-radius:50%;
+	border-bottom-right-radius:50%;
+	place-items: center;
+}
+.check-code i:active{
+	/* background-color: #ff7b00; */
+}
+.details{
+	/* font-weight: normal; */
+	font-size: 1.3rem;
+	margin: 0.5rem 0;
+}
+.checkout-total{
+	color: #76ff71;
+	font-size: 2rem;
+}
+.details-box{
+	width: 100%;
+	margin: 1rem;
+	background: #fff;
+	color: rgb(51, 51, 51);
+}
+.submit-order {
+	background-color: #ffa600;
+	width: 100%;
+	margin-bottom: 2rem;
+	color: #2c2c2c;
+	user-select: none;
+}
+.submit-order:active {
+	background-color: #ff9d00;
+	background: linear-gradient(0deg ,#ffc13b , #f08800);
+}
+@media screen and (max-width: 1441px) {
+	.box {
+		margin: 1rem;
+	}
+}

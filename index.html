@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+		<script src="https://kit.fontawesome.com/13e30f32fe.js" crossorigin="anonymous"></script>
+		<title>Mahdi Majdian</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-overlay"></div>
+			<div class="header-content">
+				<div class="header-img"></div>
+				<div class="header-p1">Eat Healthy</div>
+				<div class="header-p2">Live Healthy</div>
+			</div>
+		</div>
+		<div class="box-overlay" style="display: none" id="popup">
+			<div class="order">
+				<div class="close" id="close" onclick="closePopUp()">
+					<i class="fa fa-times"></i>
+				</div>
+				<img src="assets/plate-1.png" alt="" />
+				<div class="row w-100 m-0 p-0 mt-5 pt-5 text-white">
+					<div class="col-12 p-0">
+						<div class="row d-flex no-gutters justify-content-center">
+							<div class="col-12 text-center mt-4 pop-title" id="fff">Spicy Rote Pasta and Cheese</div>
+							<div class="col-4 text-center p-4"><span class="pop-price">139.01</span><span style="color: #b3ffb0">$</span></div>
+							<div class="col-4 text-center p-4"><span class="pop-rate">4.6</span> <i class="fa fa-star" style="color: #fff068"></i></div>
+							<div class="col-12 px-5 pt-4">
+								<div class="row no-gutters">
+									<div class="col-6">
+										<div class="qt rounded-pill d-flex justify-content-around">
+											<i class="fa fa-minus text-white pop-minus" id="pop-minus"></i>
+											<p class="m-0 my-auto pop-count">2</p>
+											<i class="fa fa-plus text-white pop-plus" onclick="pop"></i>
+										</div>
+									</div>
+									<div class="col-6 my-auto text-right">Total: <span class="pop-total"></span><span style="color: #b3ffb0">$</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12"></div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container pt-5 flex" id="list"></div>
+		</div>
+		<div class="panel d-flex flex-column justify-content-between align-items-center">
+			<div class="cart container pt-4">
+				<div class="empty-cart text-center pb-4">
+					<i class="fa fa-shopping-cart shopping-cart"></i>
+					<p class="m-0">Your shopping cart is empty!</p>
+				</div>
+				
+			</div>
+			<div class="container text-center text-white">
+				<p class="mb-2" style="font-size: 1.4rem; font-weight: normal">Discount Code?</p>
+				<div class="d-flex mb-3">
+					<div class="check-code" onclick="cart.checkDiscount()">
+						<input class="w-100 rounded-pill px-4 py-1" placeholder="code" type="text" />
+
+						<i class="fa fa-check" id="hghg"></i>
+					</div>
+				</div>
+				<div class="details-box rounded-pill mx-auto mb-2 mt-3 py-2">
+					<p class="details m-0">Price: <span class="checkout-price"></span></span></p>
+					<p class="details m-0">Taxes: <span class="checkout-taxes"></span></p>
+					<p class="details m-0">Discount: <span class="checkout-discount"></span></p>
+				</div>
+				<p style="font-size: 2rem">Total: <span class="checkout-total"></span></p>
+				<div class="submit-order rounded-pill py-2 px-4">Place Order</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
