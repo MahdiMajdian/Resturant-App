@@ -44,8 +44,8 @@ body {
 	height: 100%;
 	width: 18rem;
 	left: 50%;
-	transform: translateX(-50%);
 	top: 3rem;
+	transform: translateX(-50%);
 	background: url(assets/header-img.png) no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -160,11 +160,14 @@ body {
 .content {
 	position: absolute;
 	top: 10rem;
-	right: 19rem;
+	right: 20rem;
 	left: 0rem;
 	bottom: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
+}
+.content::-webkit-scrollbar{
+	display: none;
 }
 .flex {
 	display: flex;
@@ -345,43 +348,60 @@ body {
 		width: 14rem;
 	}
 	.header-p1 {
+		font-size: 2.4rem;
+	}
+	.header-p2 {
+		font-size: 2.4rem;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.header-p1 {
 		font-size: 1.5rem;
 	}
 	.header-p2 {
 		font-size: 1.5rem;
 	}
+	.header-content {
+		width: 100%;
+	}
 }
 @media screen and (max-width: 768px) {
+	.header {
+		height: 10rem;
+	}
 	.header-content {
 		width: 100%;
 	}
 	.header-img {
 		width: 12rem;
+		top: 0rem;
+		transform: translateX(-50%);
 	}
 	.header-p1 {
 		font-size: 1.5rem;
 		right: calc(50% + 5rem);
+		top: 25%;
 	}
 	.header-p2 {
 		font-size: 1.5rem;
 		left: calc(50% + 5rem);
+		top: 25%;
 	}
-
 	.content {
-		top: 10rem;
+		top: 5rem;
 		right: 0;
 		left: 0;
-		bottom: 0;
+		bottom: 15vh;
 		overflow-x: hidden;
-		
 	}
 
 	.panel {
 		width: 100%;
 		position: absolute;
-		top: calc(100vh + 10rem);
-		height: calc(100vh - 10rem);
+		top: 85vh;
 		right: 0;
+		height: auto;
+		
 	}
 	.details-box {
 		width: 75%;
@@ -398,27 +418,19 @@ body {
 	}
 }
 @media screen and (max-width: 500px) {
-	
 	.header-img {
 		width: 8rem;
 	}
-	
-	.content {
-		top: 10rem;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		overflow-x: hidden;
-		
+	.popup__order img {
+		width: 10rem;
+		height: 10rem;
+	}
+	.popup__order {
+		font-size: 1.5rem;
 	}
 	
-	.panel {
-		width: 100%;
-		position: absolute;
-		top: 100vh;
-		height: calc(100vh - 10rem);
-		right: 0;
-	}
+
+	
 	.details-box {
 		width: 75%;
 		margin: 1rem;
@@ -429,9 +441,7 @@ body {
 		width: 75%;
 	}
 	.header-overlay {
-	
-		border-radius:0;
-		
+		border-radius: 0;
 	}
 	.box {
 		width: 100%;
